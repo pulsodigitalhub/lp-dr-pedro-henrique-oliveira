@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var WEBHOOK_URL = '';
+  var WEBHOOK_URL = 'https://leads-clientes.sergioshouse.com.br/dr-pedro';
   var DEFAULT_DOCTOR = 'Dr. Pedro Henrique Oliveira';
   // Preencher os telefones quando cada clínica confirmar o canal comercial.
   var CLINICS = [
