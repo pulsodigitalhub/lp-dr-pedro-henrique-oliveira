@@ -27,8 +27,21 @@
 }
 
 .care .container { position: relative; }
-.care-points article { background: rgba(255, 253, 249, .35); }
+.care-points {
+  gap: 1.55rem;
+  margin-top: 1.65rem;
+}
+
+.care-points article {
+  min-height: 7.4rem;
+  padding: .65rem 1rem .75rem 1.25rem;
+  background: rgba(255, 253, 249, .35);
+}
+
+.care-points article h3 { margin-bottom: .65rem; }
+.care-points article p { line-height: 1.62; }
 
 @media (max-width: 700px) {
   .care::after { background: rgba(251, 247, 240, .94); }
+  .care-points article { min-height: 0; padding: .55rem .9rem .65rem 1.1rem; }
 }
