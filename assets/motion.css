@@ -1,0 +1,41 @@
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(1.45rem);
+    transition: opacity .65s ease, transform .65s cubic-bezier(.2,.65,.25,1);
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .treatment-grid article[data-reveal]:nth-child(2n),
+  .clinic[data-reveal]:nth-child(2n) { transition-delay: .1s; }
+
+  .treatment-grid article[data-reveal]:nth-child(3n),
+  .clinic[data-reveal]:nth-child(3n) { transition-delay: .18s; }
+
+  .button,
+  .all-plans,
+  .clinic,
+  .faq details { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+
+  .button:hover,
+  .all-plans:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.16); }
+
+  .clinic:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(6,37,68,.12); }
+
+  .faq details:hover { border-color: rgba(226,163,78,.6); }
+
+  .hero-copy > * { animation: hero-copy-in .7s both; }
+  .hero-copy > :nth-child(2) { animation-delay: .1s; }
+  .hero-copy > :nth-child(3) { animation-delay: .18s; }
+  .hero-copy > :nth-child(4) { animation-delay: .25s; }
+  .hero-copy > :nth-child(5) { animation-delay: .32s; }
+
+  @keyframes hero-copy-in {
+    from { opacity: 0; transform: translateY(1rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
