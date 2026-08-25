@@ -1,0 +1,13 @@
+.consent-banner{position:fixed;z-index:100;right:20px;bottom:20px;left:20px;max-width:760px;margin-inline:auto;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#fff;background:var(--deep);border:1px solid rgba(226,163,78,.38);border-radius:4px;box-shadow:0 16px 40px rgba(3,25,47,.28)}
+.consent-banner[hidden]{display:none}
+.consent-copy{max-width:460px}
+.consent-copy strong{display:block;margin-bottom:4px;font-size:14px}
+.consent-copy p{margin:0;color:rgba(255,255,255,.78);font-size:12px;line-height:1.5}
+.consent-copy a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+.consent-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}
+.consent-actions button{min-height:42px;padding:0 14px;border-radius:4px;border:1px solid rgba(255,255,255,.62);font:700 12px "DM Sans",sans-serif;cursor:pointer}
+.consent-essential{color:#fff;background:transparent}
+.consent-accept{color:var(--deep);background:var(--gold);border-color:var(--gold)!important}
+.consent-actions button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media (max-width:760px){.consent-banner{align-items:flex-start;flex-direction:column}.consent-actions{width:100%;justify-content:flex-start}}
+@media (max-width:480px){.consent-banner{right:12px;bottom:12px;left:12px;padding:16px}.consent-actions button{flex:1 1 100%;width:100%}}
