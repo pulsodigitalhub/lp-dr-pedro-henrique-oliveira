@@ -1,11 +1,6 @@
 .treatment-icon {
-  display: grid;
-  width: 2.45rem;
-  height: 2.45rem;
+  display: block;
   margin-bottom: .72rem;
-  place-items: center;
-  border: 1px solid #c7862d;
-  border-radius: 50%;
   color: #c7862d;
   font-size: 1.05rem;
 }
