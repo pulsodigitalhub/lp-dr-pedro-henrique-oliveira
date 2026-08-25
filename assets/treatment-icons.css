@@ -14,7 +14,7 @@
 
 .plans .plan-logos {
   display: flex;
-  max-width: 50rem;
+  max-width: 56rem;
   margin: 2.1rem auto 2rem;
   align-items: center;
   justify-content: center;
@@ -24,8 +24,8 @@
 .plans .plan-logos span {
   flex: 1 1 0;
   display: grid;
-  min-height: 3.15rem;
-  padding: .5rem .7rem;
+  min-height: 4.15rem;
+  padding: .55rem .85rem;
   place-items: center;
   border-right: 1px solid #e5e9ed;
 }
@@ -33,35 +33,35 @@
 .plan-logos img {
   display: block;
   width: 100%;
-  max-width: 7.5rem;
-  max-height: 2.8rem;
+  max-width: 8.8rem;
+  max-height: 3.5rem;
   object-fit: contain;
 }
 
 .plans .all-plans {
-  flex: 0 0 5.4rem;
-  min-height: 5.7rem;
-  margin-left: .85rem;
-  padding: .65rem .45rem;
+  flex: 0 0 6.8rem;
+  min-height: 6.7rem;
+  margin-left: 1rem;
+  padding: .78rem .58rem;
   align-items: center;
   justify-content: center;
   border-color: #e8edf1;
   border-radius: .38rem;
   background: #fff;
   box-shadow: 0 4px 14px rgba(6, 37, 68, .08);
-  font-size: .7rem;
+  font-size: .78rem;
   line-height: 1.45;
 }
 
 .plans .all-plans small {
   display: block;
   width: 100%;
-  margin-top: .45rem;
-  padding: .42rem .18rem;
+  margin-top: .55rem;
+  padding: .5rem .22rem;
   border: 1px solid #e2a34e;
   border-radius: .2rem;
   color: #d88724;
-  font-size: .54rem;
+  font-size: .61rem;
   line-height: 1;
 }
 
