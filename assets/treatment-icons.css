@@ -7,10 +7,12 @@
 
 .treatment-grid article > b { display: none; }
 
+.plans { padding: 5.9rem 0; }
+
 .plans .plan-logos {
   display: flex;
-  max-width: 56rem;
-  margin: 2.1rem auto 2rem;
+  max-width: 64rem;
+  margin: 2.65rem auto 2.35rem;
   align-items: center;
   justify-content: center;
   border: 0;
@@ -19,8 +21,8 @@
 .plans .plan-logos span {
   flex: 1 1 0;
   display: grid;
-  min-height: 4.15rem;
-  padding: .55rem .85rem;
+  min-height: 5.1rem;
+  padding: .65rem 1rem;
   place-items: center;
   border-right: 1px solid #e5e9ed;
 }
@@ -28,41 +30,42 @@
 .plan-logos img {
   display: block;
   width: 100%;
-  max-width: 8.8rem;
-  max-height: 3.5rem;
+  max-width: 10.4rem;
+  max-height: 4.15rem;
   object-fit: contain;
 }
 
 .plans .all-plans {
-  flex: 0 0 6.8rem;
-  min-height: 6.7rem;
-  margin-left: 1rem;
-  padding: .78rem .58rem;
+  flex: 0 0 8.1rem;
+  min-height: 8rem;
+  margin-left: 1.2rem;
+  padding: .95rem .72rem;
   align-items: center;
   justify-content: center;
   border-color: #e8edf1;
   border-radius: .38rem;
   background: #fff;
   box-shadow: 0 4px 14px rgba(6, 37, 68, .08);
-  font-size: .78rem;
+  font-size: .9rem;
   line-height: 1.45;
 }
 
 .plans .all-plans small {
   display: block;
   width: 100%;
-  margin-top: .55rem;
-  padding: .5rem .22rem;
+  margin-top: .68rem;
+  padding: .62rem .26rem;
   border: 1px solid #e2a34e;
   border-radius: .2rem;
   color: #d88724;
-  font-size: .61rem;
+  font-size: .7rem;
   line-height: 1;
 }
 
 @media (max-width: 700px) {
+  .plans { padding: 4.4rem 0; }
   .plans .plan-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem 0; }
-  .plans .plan-logos span { min-height: 4rem; }
-  .plan-logos img { max-width: 7rem; max-height: 2.7rem; }
+  .plans .plan-logos span { min-height: 4.5rem; }
+  .plan-logos img { max-width: 8rem; max-height: 3.1rem; }
   .plans .all-plans { grid-column: 2; margin: 0; justify-self: center; }
 }
