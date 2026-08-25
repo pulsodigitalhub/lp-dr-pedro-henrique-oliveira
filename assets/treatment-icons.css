@@ -48,6 +48,8 @@
   box-shadow: 0 4px 14px rgba(6, 37, 68, .08);
   font-size: .9rem;
   line-height: 1.45;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .plans .all-plans small {
@@ -62,10 +64,34 @@
   line-height: 1;
 }
 
+.additional-plans {
+  display: grid;
+  max-width: 64rem;
+  margin: 0 auto 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #e5e9ed;
+  border-left: 1px solid #e5e9ed;
+}
+
+.additional-plans[hidden] { display: none; }
+
+.additional-plans span {
+  display: grid;
+  min-height: 3.3rem;
+  padding: .7rem;
+  place-items: center;
+  border-right: 1px solid #e5e9ed;
+  border-bottom: 1px solid #e5e9ed;
+  color: #173c62;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
 @media (max-width: 700px) {
   .plans { padding: 4.4rem 0; }
   .plans .plan-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem 0; }
   .plans .plan-logos span { min-height: 4.5rem; }
   .plan-logos img { max-width: 8rem; max-height: 3.1rem; }
   .plans .all-plans { grid-column: 2; margin: 0; justify-self: center; }
+  .additional-plans { grid-template-columns: repeat(2, 1fr); }
 }
