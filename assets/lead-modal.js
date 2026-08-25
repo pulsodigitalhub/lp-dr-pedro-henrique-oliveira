@@ -8,6 +8,9 @@
 
   var WEBHOOK_URL = '';
   var DEFAULT_DOCTOR = 'Dr. Pedro Henrique Oliveira';
+  // Canal central do Dr. Pedro. Preencher com DDI + DDD + número, apenas dígitos.
+  // Exemplo: 5561999999999
+  var CENTRAL_WHATSAPP = '';
   // Preencher os telefones quando cada clínica confirmar o canal comercial.
   var CLINICS = [
     { id: 'artroclin', name: 'Artroclin', phone: '' },
@@ -132,11 +135,12 @@
       'Telefone: ' + formatPhone(telefoneDigits) + '\n' +
       'Clínica preferida: ' + clinic.name;
 
-    if (!digits(clinic.phone)) {
-      showError('O canal de agendamento desta unidade será liberado em breve.');
+    var whatsappPhone = digits(CENTRAL_WHATSAPP) || digits(clinic.phone);
+    if (!whatsappPhone) {
+      showError('O WhatsApp de agendamento será liberado em breve.');
       return;
     }
-    var whatsappUrl = 'https://wa.me/' + digits(clinic.phone) + '?text=' + encodeURIComponent(message);
+    var whatsappUrl = 'https://wa.me/' + whatsappPhone + '?text=' + encodeURIComponent(message);
 
     isSubmitting = true;
     submitBtn.disabled = true;
