@@ -1,2 +1,2 @@
 .credentials-list li{position:relative;padding-left:28px}.credentials-list li::before{position:absolute;left:0;top:50%;display:grid;width:16px;height:16px;place-items:center;transform:translateY(-50%);border:1px solid var(--gold);border-radius:50%;color:var(--gold);content:"✓";font-size:.62rem;font-weight:700}
-.about-photo-frame{display:block;overflow:hidden}.split-about .about-photo-frame img{display:block;transform:scale(1.14);transform-origin:center 32%}
+.about-photo-frame{display:block;overflow:hidden}.split-about .about-photo-frame img{display:block;transform:scale(1.28);transform-origin:center 32%}
