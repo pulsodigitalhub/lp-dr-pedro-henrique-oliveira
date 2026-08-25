@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var WEBHOOK_URL = '';
+  var WEBHOOK_URL = 'https://leads-clientes.sergioshouse.com.br/dr-pedro';
   var DEFAULT_DOCTOR = 'Dr. Pedro Henrique Oliveira';
   // Canal central do Dr. Pedro. Preencher com DDI + DDD + número, apenas dígitos.
   // Exemplo: 5561999999999
