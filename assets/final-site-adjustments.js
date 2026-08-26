@@ -2,7 +2,7 @@
   'use strict';
 
   var treatments = [
-    { index: 3, title: 'Tratamentos da coluna e hérnia de disco', text: 'Abordagens minimamente invasivas para dor cervical, lombar e hérnias de disco.', icon: 'fa-wave-square', href: 'tratamentos/coluna-e-hernia-de-disco.html' },
+    { index: 3, title: 'Tratamentos da coluna e hérnia de disco', text: 'Abordagens minimamente invasivas para dor cervical, lombar e hérnias de disco.', image: '../img/icons/spine-flaticon-1397621.png', href: 'tratamentos/coluna-e-hernia-de-disco.html' },
     { index: 5, title: 'Medicina regenerativa (PRP, terapia por ondas de choque e laserterapia)', text: 'Tratamentos que estimulam a regeneração, reduzem a dor e aceleram a recuperação dos tecidos.', icon: 'fa-dna', href: 'tratamentos/medicina-regenerativa.html' },
     { index: 6, title: 'Artrose, artrite, condropatia, tendinite e bursite', text: 'Tratamentos personalizados para reduzir a dor, preservar a articulação e melhorar a função.', icon: 'fa-bone', href: 'tratamentos/artrose-artrite-e-tendinites.html' }
   ];
@@ -12,10 +12,15 @@
     if (!card) return;
     var title = card.querySelector('h3');
     var text = card.querySelector('p');
+    var iconHolder = card.querySelector('.treatment-icon');
     var icon = card.querySelector('.treatment-icon i');
     if (title) title.textContent = item.title;
     if (text) text.textContent = item.text;
-    if (icon) icon.className = 'fa-solid ' + item.icon;
+    if (item.image && iconHolder) {
+      iconHolder.innerHTML = '<img class="treatment-icon-image" src="' + item.image + '" alt="" aria-hidden="true">';
+    } else if (icon) {
+      icon.className = 'fa-solid ' + item.icon;
+    }
     if (card.tagName === 'A') {
       card.href = item.href;
       card.setAttribute('aria-label', 'Saiba mais sobre ' + item.title.toLowerCase());
