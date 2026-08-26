@@ -32,7 +32,14 @@
     locations.classList.add('locations-final');
     var eyebrow = locations.querySelector(':scope > .container > .eyebrow');
     var title = locations.querySelector(':scope > .container > h2');
-    if (eyebrow) eyebrow.remove();
+    if (eyebrow) {
+      eyebrow.textContent = 'Atendimento presencial';
+    } else if (title) {
+      eyebrow = document.createElement('p');
+      eyebrow.className = 'eyebrow';
+      eyebrow.textContent = 'Atendimento presencial';
+      title.before(eyebrow);
+    }
     if (title) title.textContent = 'Locais de atendimento';
   }
 
