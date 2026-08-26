@@ -9,7 +9,7 @@
   var WEBHOOK_URL = 'https://leads-clientes.sergioshouse.com.br/dr-pedro';
   var DEFAULT_DOCTOR = 'Dr. Pedro Henrique Oliveira';
   // Canal comercial do Dr. Pedro, com DDI + DDD + número, apenas dígitos.
-  var CENTRAL_WHATSAPP = '556184507010';
+  var CENTRAL_WHATSAPP = '5561984507010';
 
   function digits(v) { return String(v || '').replace(/\D/g, ''); }
 

@@ -1,7 +1,11 @@
 (function () {
   'use strict';
 
-  var href = 'https://wa.me/556184507010?text=' + encodeURIComponent('Olá, vim do site e gostaria de agendar uma consulta.');
+  var href = 'https://wa.me/5561984507010?text=' + encodeURIComponent('Olá, vim do site e gostaria de agendar uma consulta.');
+
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(function (link) {
+    link.href = href;
+  });
 
   document.querySelectorAll('[data-lead-open]').forEach(function (button) {
     var link = document.createElement('a');
@@ -15,5 +19,5 @@
   });
 
   var phone = document.querySelector('.footer-phone span:last-child');
-  if (phone) phone.textContent = '+55 (61) 8450-7010';
+  if (phone) phone.textContent = '+55 (61) 98450-7010';
 }());
