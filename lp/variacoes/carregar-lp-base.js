@@ -2,15 +2,16 @@
   'use strict';
 
   var settings = {
-    joelho: 'Ortopedia para dor no joelho em Brasília',
-    ombro: 'Ortopedia para dor no ombro em Brasília',
-    coluna: 'Ortopedia para dor na coluna em Brasília',
-    quadril: 'Ortopedia para dor no quadril em Brasília',
-    'punho-mao': 'Ortopedia para dor no punho e mão em Brasília',
-    'pe-tornozelo': 'Ortopedia para dor no pé e tornozelo em Brasília',
+    joelho: 'Ortopedista para dor no joelho em Brasília',
+    ombro: 'Ortopedista para dor no ombro em Brasília',
+    coluna: 'Ortopedista para dor na coluna em Brasília',
+    quadril: 'Ortopedista para dor no quadril em Brasília',
+    'punho-mao': 'Ortopedista para dor no punho e mão em Brasília',
+    'pe-tornozelo': 'Ortopedista para dor no pé e tornozelo em Brasília',
     'ortopedista-aguas-claras': 'Ortopedista em Águas Claras',
     'ortopedista-asa-sul': 'Ortopedista na Asa Sul',
-    convenio: 'Ortopedia pelo convênio em Brasília'
+    'ortopedista-taguatinga': 'Ortopedista em Taguatinga',
+    convenio: 'Ortopedista por convênio em Brasília'
   };
 
   var key = document.documentElement.dataset.variation;
