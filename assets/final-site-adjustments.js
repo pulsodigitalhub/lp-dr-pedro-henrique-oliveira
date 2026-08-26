@@ -46,4 +46,18 @@
   var faq = document.querySelectorAll('.faq-list details');
   if (faq[0]) faq[0].querySelector('p').textContent = 'Atendimento especializado em Ortopedia e Medicina da Dor, com foco em dor crônica, problemas da coluna, artrose, artrite, condropatias, tendinites, bursites e outras condições musculoesqueléticas, buscando aliviar a dor, recuperar movimentos e melhorar a qualidade de vida.';
   if (faq[1]) faq[1].querySelector('p').textContent = 'Cada tratamento é definido de forma individualizada após avaliação médica. Entre as opções estão infiltrações guiadas por imagem, bloqueios, radiofrequência, viscossuplementação e Medicina Regenerativa (PRP, terapia por ondas de choque e laserterapia), além de outras técnicas modernas conforme a necessidade de cada paciente.';
+
+  var reviews = document.querySelector('.review-demo-grid');
+  if (reviews) {
+    var comments = [
+      ['Tereza C.', 'Fui em uma consulta com o Dr. Pedro e gostei muito do atendimento. Muito atencioso e profissional!'],
+      ['Francisco R.', 'O Dr. Pedro atendeu o meu pai, foi muito paciente para explicar todo o diagnóstico e nos passar segurança.'],
+      ['Kamila O.', 'Só tenho a agradecer o Dr. Pedro por todo o carinho e atenção.']
+    ];
+    reviews.classList.add('reviews-final');
+    reviews.setAttribute('aria-label', 'Avaliações de pacientes');
+    reviews.innerHTML = comments.map(function (comment) {
+      return '<article class="review-demo-card"><p>' + comment[1] + '</p><span class="review-demo-name">' + comment[0] + '</span></article>';
+    }).join('');
+  }
 }());
