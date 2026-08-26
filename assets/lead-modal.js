@@ -8,16 +8,8 @@
 
   var WEBHOOK_URL = 'https://leads-clientes.sergioshouse.com.br/dr-pedro';
   var DEFAULT_DOCTOR = 'Dr. Pedro Henrique Oliveira';
-  // Canal central do Dr. Pedro. Preencher com DDI + DDD + número, apenas dígitos.
-  // Exemplo: 5561999999999
-  var CENTRAL_WHATSAPP = '';
-  // Preencher os telefones quando cada clínica confirmar o canal comercial.
-  var CLINICS = [
-    { id: 'artroclin', name: 'Artroclin', phone: '' },
-    { id: 'cad', name: 'CAD — Centro Avançado de Dor', phone: '' },
-      { id: 'bem', name: 'Clínicas Ben Ortopedia | Longevidade', phone: '' },
-      { id: 'city', name: 'Clínica Citti — Tratamento e Alívio da Dor', phone: '' }
-  ];
+  // Canal comercial do Dr. Pedro, com DDI + DDD + número, apenas dígitos.
+  var CENTRAL_WHATSAPP = '556184507010';
 
   function digits(v) { return String(v || '').replace(/\D/g, ''); }
 
@@ -35,7 +27,7 @@
 
   function isValidBrazilPhone(d) { return d.length === 10 || d.length === 11; }
 
-  var modal, backdrop, form, nameInput, phoneInput, clinicInput, errorEl, submitBtn, submitLabel;
+  var modal, backdrop, form, nameInput, phoneInput, errorEl, submitBtn, submitLabel;
   var lastFocus = null;
   var isSubmitting = false;
   var current = { doctor: DEFAULT_DOCTOR };
@@ -51,8 +43,6 @@
         '<h3 id="lead-modal-title">Fale com a equipe pelo WhatsApp</h3>' +
         '<p class="lead-modal-intro">Preencha nome e telefone para agilizar o atendimento. Você será direcionado ao WhatsApp em seguida.</p>' +
         '<form class="lead-modal-form" novalidate>' +
-          '<label for="lead-modal-clinic">Clínica preferida</label>' +
-          '<select id="lead-modal-clinic" name="clinica" required><option value="">Selecione uma unidade</option>' + CLINICS.map(function (clinic) { return '<option value="' + clinic.id + '">' + clinic.name + '</option>'; }).join('') + '</select>' +
           '<label for="lead-modal-name">Nome</label>' +
           '<input id="lead-modal-name" name="nome" type="text" autocomplete="name" required minlength="2" />' +
           '<label for="lead-modal-phone">Telefone (com DDD)</label>' +
@@ -70,7 +60,6 @@
     form = backdrop.querySelector('form');
     nameInput = backdrop.querySelector('#lead-modal-name');
     phoneInput = backdrop.querySelector('#lead-modal-phone');
-    clinicInput = backdrop.querySelector('#lead-modal-clinic');
     errorEl = backdrop.querySelector('.lead-modal-error');
     submitBtn = backdrop.querySelector('.lead-modal-submit');
     submitLabel = backdrop.querySelector('.lead-modal-submit-label');
@@ -110,14 +99,6 @@
 
     var nome = nameInput.value.trim();
     var telefoneDigits = digits(phoneInput.value);
-    var clinic = CLINICS.filter(function (item) { return item.id === clinicInput.value; })[0];
-
-    if (!clinic) {
-      showError('Escolha a clínica preferida para continuar.');
-      clinicInput.focus();
-      return;
-    }
-
     if (!nome || nome.length < 2) {
       showError('Informe seu nome para continuar.');
       nameInput.focus();
@@ -129,13 +110,9 @@
       return;
     }
 
-    var message =
-      'Olá, gostaria de agendar uma avaliação com ' + current.doctor + '.\n\n' +
-      'Nome: ' + nome + '\n' +
-      'Telefone: ' + formatPhone(telefoneDigits) + '\n' +
-      'Clínica preferida: ' + clinic.name;
+    var message = 'Olá, eu me chamo ' + nome + ' e gostaria de agendar uma consulta com o Dr. Pedro Henrique.';
 
-    var whatsappPhone = digits(CENTRAL_WHATSAPP) || digits(clinic.phone);
+    var whatsappPhone = digits(CENTRAL_WHATSAPP);
     if (!whatsappPhone) {
       showError('O WhatsApp de agendamento será liberado em breve.');
       return;
@@ -148,7 +125,7 @@
     showError('');
 
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'lead_form_submit', form_name: 'lead_modal_agendamento', clinic: clinic.id });
+    window.dataLayer.push({ event: 'lead_form_submit', form_name: 'lead_modal_agendamento', clinic: '' });
 
     // abre em janela síncrona (gesto do usuário) — evita bloqueio de popup
     // enquanto o fetch do webhook roda em segundo plano.
@@ -163,7 +140,7 @@
         whatsapp: telefoneDigits,
         telefone_digits: telefoneDigits,
         medico: current.doctor,
-        clinica: clinic.name,
+        clinica: '',
         motivo: 'Agendamento via popup WhatsApp',
         pagina: window.location.href,
         page_url: window.location.href,
