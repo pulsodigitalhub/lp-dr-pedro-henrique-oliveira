@@ -2,7 +2,7 @@
   'use strict';
 
   var treatments = [
-    { index: 3, title: 'Tratamentos da coluna e hérnia de disco', text: 'Abordagens minimamente invasivas para dor cervical, lombar e hérnias de disco.', icon: 'fa-spine', href: 'tratamentos/coluna-e-hernia-de-disco.html' },
+    { index: 3, title: 'Tratamentos da coluna e hérnia de disco', text: 'Abordagens minimamente invasivas para dor cervical, lombar e hérnias de disco.', icon: 'fa-wave-square', href: 'tratamentos/coluna-e-hernia-de-disco.html' },
     { index: 5, title: 'Medicina regenerativa (PRP, terapia por ondas de choque e laserterapia)', text: 'Tratamentos que estimulam a regeneração, reduzem a dor e aceleram a recuperação dos tecidos.', icon: 'fa-dna', href: 'tratamentos/medicina-regenerativa.html' },
     { index: 6, title: 'Artrose, artrite, condropatia, tendinite e bursite', text: 'Tratamentos personalizados para reduzir a dor, preservar a articulação e melhorar a função.', icon: 'fa-bone', href: 'tratamentos/artrose-artrite-e-tendinites.html' }
   ];
