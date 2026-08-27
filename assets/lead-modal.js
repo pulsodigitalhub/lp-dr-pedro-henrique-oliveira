@@ -126,10 +126,6 @@
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'lead_form_submit', form_name: 'lead_modal_agendamento', clinic: '' });
-
-    // abre em janela síncrona (gesto do usuário) — evita bloqueio de popup
-    // enquanto o fetch do webhook roda em segundo plano.
-    var whatsAppWindow = window.open(whatsappUrl, '_blank', 'noopener');
     window.dataLayer.push({ event: 'whatsapp_open' });
 
     if (WEBHOOK_URL) fetch(WEBHOOK_URL, {
@@ -149,10 +145,12 @@
       }),
       keepalive: true
     }).catch(function () {
-      /* WhatsApp já abriu; o webhook é melhor-esforço, não bloqueia o usuário. */
+      /* navegação para o WhatsApp já está em andamento; o webhook é melhor-esforço, não bloqueia o usuário. */
     });
 
-    if (!whatsAppWindow) window.location.href = whatsappUrl;
+    // navega na mesma aba (sem window.open) — evitava abrir 2 abas de WhatsApp
+    // ao mesmo tempo em alguns navegadores/webviews.
+    window.location.href = whatsappUrl;
 
     form.reset();
     closeModal();
