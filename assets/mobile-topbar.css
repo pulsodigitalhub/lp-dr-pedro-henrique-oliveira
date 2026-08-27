@@ -1,10 +1,25 @@
 @media (max-width: 900px) {
   .topbar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
     background: #01162b !important;
     border-bottom: 0 !important;
   }
 
+  .hero-copy {
+    padding-top: 122px;
+  }
+
   .topbar .menu a {
     color: #fff;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-copy {
+    padding-top: 116px;
   }
 }
