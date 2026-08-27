@@ -1,0 +1,10 @@
+@media (max-width: 900px) {
+  .topbar {
+    background: #01162b !important;
+    border-bottom: 0 !important;
+  }
+
+  .topbar .menu a {
+    color: #fff;
+  }
+}
