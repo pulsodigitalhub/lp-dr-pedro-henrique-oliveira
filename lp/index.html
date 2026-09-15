@@ -16,7 +16,7 @@ gtag('consent', 'default', {
   personalization_storage: 'denied',
   security_storage: 'granted',
   wait_for_update: 500
-});
+});gtag('set','url_passthrough',true);
 try {
   var savedConsent = localStorage.getItem('dr_pedro_henrique_consent_v1');
   if (savedConsent) gtag('consent', 'update', JSON.parse(savedConsent));
@@ -89,4 +89,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 })();
 </script>
+<script src="/consentimento.js" defer data-chave="dr_pedro_henrique_consent_v1"></script>
 </body></html>
