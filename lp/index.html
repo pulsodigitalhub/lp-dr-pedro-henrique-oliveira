@@ -2,25 +2,19 @@
 <html lang="pt-BR">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Avaliação ortopedica e procedimentos para intervenção em dor. Mais de 50 convênios aceitos e 4 locais de atendimento."><link rel="icon" type="image/png" href="../img/favicon-ph-round.png"><title>Ortopedista em Brasília | Dr. Pedro Henrique</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/footer-photo.css"><link rel="stylesheet" href="../assets/about-bullets.css"><link rel="stylesheet" href="../assets/hero-editorial.css"><link rel="stylesheet" href="../assets/faq.css"><link rel="stylesheet" href="../assets/treatment-icons.css"><link rel="stylesheet" href="../assets/motion.css"><link rel="stylesheet" href="../assets/care-background.css"><link rel="stylesheet" href="lp.css"><link rel="stylesheet" href="../assets/review-placeholders.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="../assets/lead-modal.css">
-<link rel="stylesheet" href="../assets/consent-banner.css">
 <link rel="stylesheet" href="../assets/lead-buttons.css">
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', {
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
-  analytics_storage: 'denied',
+  ad_storage: 'granted',
+  ad_user_data: 'granted',
+  ad_personalization: 'granted',
+  analytics_storage: 'granted',
   functionality_storage: 'granted',
-  personalization_storage: 'denied',
-  security_storage: 'granted',
-  wait_for_update: 500
+  personalization_storage: 'granted',
+  security_storage: 'granted'
 });gtag('set','url_passthrough',true);
-try {
-  var savedConsent = localStorage.getItem('dr_pedro_henrique_consent_v1');
-  if (savedConsent) gtag('consent', 'update', JSON.parse(savedConsent));
-} catch (error) {}
 </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -39,16 +33,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KK7F7JZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<section id="consent-banner" class="consent-banner" aria-labelledby="consent-title" role="region">
-  <div class="consent-copy">
-    <strong id="consent-title">Sua privacidade</strong>
-    <p>Usamos cookies essenciais para o funcionamento da página. Com sua autorização, também usamos cookies de medição e publicidade para melhorar a comunicação.</p>
-  </div>
-  <div class="consent-actions">
-    <button class="consent-essential" type="button" data-consent-choice="essential">Usar apenas essenciais</button>
-    <button class="consent-accept" type="button" data-consent-choice="all">Aceitar todos</button>
-  </div>
-</section>
 <header class="topbar"><nav class="container nav" aria-label="Navegação principal"><a class="brand" href="#inicio"><img src="../img/logo-rodape-dr-pedro-henrique.png" alt="Dr. Pedro Henrique Oliveira"></a><div class="menu"><a href="#inicio">Início</a><a href="#tratamentos">Tratamentos</a><a href="#convenios">Convênios</a><a href="#locais">Locais</a></div><button type="button" class="button" data-lead-open>Agendar avaliação</button></nav></header>
 <main>
 <section class="hero" id="inicio"><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow">Ortopedia e medicina da dor</p><h1>Ortopedista em Brasília</h1><p>Avaliação ortopedica e procedimentos para intervenção em dor. Mais de 50 convênios aceitos e 4 locais de atendimento.</p><div class="hero-actions"><button type="button" class="button" data-lead-open>Agendar avaliação</button><a class="button button-outline" href="#convenios">Ver convênios</a></div><p class="credentials">CRM-DF 29441 <span>•</span> RQE 24819 <span>•</span> TEOT 20671</p></div><figure class="hero-photo"><img src="../img/dr-pedro-henrique-hero-final.png" alt="Dr. Pedro Henrique Oliveira no consultório"></figure></div></section>
@@ -65,29 +49,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="../assets/convenios-expand.js"></script>
 <script src="../assets/motion.js"></script>
 <script src="../assets/final-site-adjustments.js"></script>
-<script>
-(function() {
-  var consentKey = 'dr_pedro_henrique_consent_v1';
-  var banner = document.getElementById('consent-banner');
-  function setConsent(choice) {
-    var consent = choice === 'all'
-      ? { ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted', analytics_storage:'granted', functionality_storage:'granted', personalization_storage:'granted', security_storage:'granted' }
-      : { ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied', analytics_storage:'denied', functionality_storage:'granted', personalization_storage:'denied', security_storage:'granted' };
-    gtag('consent', 'update', consent);
-    dataLayer.push({ event: 'consent_choice', consent_choice: choice });
-    try { localStorage.setItem(consentKey, JSON.stringify(consent)); } catch (error) {}
-    banner.hidden = true;
-  }
-  window.reopenConsent = function() {
-    banner.hidden = false;
-    banner.querySelector('[data-consent-choice="essential"]').focus();
-  };
-  try { if (localStorage.getItem(consentKey)) banner.hidden = true; } catch (error) {}
-  if (window.location.hash === '#consentimento') window.reopenConsent();
-  banner.querySelectorAll('[data-consent-choice]').forEach(function(button) {
-    button.addEventListener('click', function() { setConsent(button.dataset.consentChoice); });
-  });
-})();
-</script>
-<script src="/consentimento.js" defer data-chave="dr_pedro_henrique_consent_v1"></script>
 </body></html>
